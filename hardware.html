@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hardware Builder — Собери свой ПК</title>
+<title>Hardware Builder — Өз компьютеріңді құрастыр</title>
 
 <style>
 * {
@@ -203,7 +204,6 @@ header {
         0 0 40px rgba(0,0,0,.8);
 }
 
-/* glass */
 .pc-case::before {
     content: "";
     position: absolute;
@@ -220,7 +220,6 @@ header {
     pointer-events: none;
 }
 
-/* front panel */
 .front-panel {
     position: absolute;
     right: 0;
@@ -250,7 +249,6 @@ header {
     opacity: .55;
 }
 
-/* power button */
 .power-button {
     position: absolute;
     right: 27px;
@@ -564,23 +562,6 @@ header {
     left: 210px;
     top: 335px;
     transform: rotate(-20deg);
-}
-
-/* labels */
-.part-label {
-    position: absolute;
-    background: rgba(0,0,0,.8);
-    border: 1px solid #3e4a61;
-    padding: 4px 7px;
-    border-radius: 5px;
-    font-size: 9px;
-    opacity: 0;
-    transition: .3s;
-    z-index: 20;
-}
-
-.pc-case:hover .part.installed + .part-label {
-    opacity: 1;
 }
 
 /* ================= RIGHT PANEL ================= */
@@ -1024,19 +1005,25 @@ button {
 <body>
 
 <header>
+
     <div class="logo">
         HARD<span>WARE</span> BUILDER
     </div>
 
     <div class="tabs">
-        <button class="tab active" onclick="openTab('hardware', this)">
+
+        <button class="tab active"
+                onclick="openTab('hardware', this)">
             🖥 Hardware
         </button>
 
-        <button class="tab" onclick="openTab('second', this)">
-            🔒 Вкладка 2
+        <button class="tab"
+                onclick="openTab('second', this)">
+            🔒 2-бөлім
         </button>
+
     </div>
+
 </header>
 
 
@@ -1049,24 +1036,40 @@ button {
     <div class="game-head">
 
         <div class="game-title">
-            <h1>Собери свой компьютер</h1>
-            <p>Выбирай комплектующие и собери ПК, не превысив бюджет.</p>
+
+            <h1>
+                Өз компьютеріңді құрастыр
+            </h1>
+
+            <p>
+                Құрамдас бөлшектерді таңдап, бюджеттен аспайтын компьютер жина.
+            </p>
+
         </div>
+
 
         <div class="budget-box">
 
             <div class="budget-top">
+
                 <span class="budget-label">
-                    Бюджет игры
+                    Ойын бюджеті
                 </span>
 
-                <span id="budgetText" class="budget-value good">
+                <span id="budgetText"
+                      class="budget-value good">
                     $4,500
                 </span>
+
             </div>
 
+
             <div class="budget-line">
-                <div id="budgetFill" class="budget-fill"></div>
+
+                <div id="budgetFill"
+                     class="budget-fill">
+                </div>
+
             </div>
 
         </div>
@@ -1081,25 +1084,32 @@ button {
         <section class="pc-area">
 
             <div class="pc-title">
-                ВАШ ПК • КОМПЛЕКТУЮЩИЕ УСТАНАВЛИВАЮТСЯ ПОЭТАПНО
+                СІЗДІҢ КОМПЬЮТЕРІҢІЗ • ҚҰРАМДАС БӨЛШЕКТЕР КЕЗЕҢ-КЕЗЕҢІМЕН ОРНАТЫЛАДЫ
             </div>
 
-            <div class="pc-case" id="pcCase">
+
+            <div class="pc-case"
+                 id="pcCase">
 
                 <div class="front-panel"></div>
+
                 <div class="power-button"></div>
 
+
                 <!-- Motherboard -->
+
                 <div id="visual-motherboard"
                      class="part motherboard">
 
                     <div class="socket"></div>
 
                     <div class="slots">
+
                         <div class="slot"></div>
                         <div class="slot"></div>
                         <div class="slot"></div>
                         <div class="slot"></div>
+
                     </div>
 
                     <div class="pcie"></div>
@@ -1111,25 +1121,40 @@ button {
 
 
                 <!-- CPU -->
+
                 <div id="visual-cpu"
                      class="part cpu">
                 </div>
 
 
                 <!-- Cooler -->
+
                 <div id="visual-cooler"
                      class="part cooler">
                 </div>
 
 
                 <!-- RAM -->
-                <div id="visual-ram1" class="part ram ram1"></div>
-                <div id="visual-ram2" class="part ram ram2"></div>
-                <div id="visual-ram3" class="part ram ram3"></div>
-                <div id="visual-ram4" class="part ram ram4"></div>
+
+                <div id="visual-ram1"
+                     class="part ram ram1">
+                </div>
+
+                <div id="visual-ram2"
+                     class="part ram ram2">
+                </div>
+
+                <div id="visual-ram3"
+                     class="part ram ram3">
+                </div>
+
+                <div id="visual-ram4"
+                     class="part ram ram4">
+                </div>
 
 
                 <!-- GPU -->
+
                 <div id="visual-gpu"
                      class="part gpu">
 
@@ -1141,26 +1166,32 @@ button {
 
 
                 <!-- SSD -->
+
                 <div id="visual-ssd"
                      class="part ssd">
                 </div>
 
 
                 <!-- PSU -->
+
                 <div id="visual-psu"
                      class="part psu">
                 </div>
 
 
                 <!-- Case fans -->
+
                 <div class="case-fans">
+
                     <div class="case-fan"></div>
                     <div class="case-fan"></div>
                     <div class="case-fan"></div>
+
                 </div>
 
 
-                <!-- cables -->
+                <!-- Cables -->
+
                 <div class="cable c1"></div>
                 <div class="cable c2"></div>
 
@@ -1173,21 +1204,25 @@ button {
 
         <section class="panel">
 
-            <div id="stepCard" class="step-card">
+            <div id="stepCard"
+                 class="step-card">
 
                 <div class="step-top">
 
                     <div>
+
                         <div id="stepNumber"
                              class="step-number">
-                            ШАГ 1 / 8
+                            1 / 8 ҚАДАМ
                         </div>
 
                         <h2 id="stepTitle"
                             class="step-title">
-                            Материнская плата
+                            Аналық плата
                         </h2>
+
                     </div>
+
 
                     <div id="stepIcon"
                          class="step-icon">
@@ -1203,18 +1238,29 @@ button {
 
 
                 <div class="why">
-                    <strong>Зачем нужна?</strong>
+
+                    <strong>
+                        Не үшін қажет?
+                    </strong>
+
                     <br>
-                    <span id="whyText"></span>
+
+                    <span id="whyText">
+                    </span>
+
                 </div>
 
 
                 <div class="options-title">
-                    <strong>Выберите комплектующее</strong>
+
+                    <strong>
+                        Құрамдас бөлшекті таңдаңыз
+                    </strong>
 
                     <span>
-                        Чем дороже — тем выше уровень
+                        Бағасы жоғары болған сайын деңгейі де жоғары
                     </span>
+
                 </div>
 
 
@@ -1228,13 +1274,14 @@ button {
                     <button id="backBtn"
                             class="nav-btn"
                             onclick="previousStep()">
-                        ← Назад
+                        ← Артқа
                     </button>
+
 
                     <button id="nextBtn"
                             class="nav-btn primary"
                             onclick="nextStep()">
-                        Выбрать и дальше →
+                        Таңдау және жалғастыру →
                     </button>
 
                 </div>
@@ -1247,8 +1294,9 @@ button {
             <div class="summary">
 
                 <h3>
-                    📋 Ваша сборка
+                    📋 Сіздің жинағыңыз
                 </h3>
+
 
                 <div id="summaryList"
                      class="summary-list">
@@ -1266,36 +1314,55 @@ button {
                     🖥️
                 </div>
 
+
                 <h2>
-                    ПК собран!
+                    Компьютер дайын!
                 </h2>
 
+
                 <p>
-                    Все основные комплектующие выбраны.
+                    Барлық негізгі құрамдас бөлшектер таңдалды.
                 </p>
 
 
                 <div class="result-grid">
 
                     <div class="result-box">
-                        <small>Потрачено</small>
+
+                        <small>
+                            Жұмсалғаны
+                        </small>
+
                         <strong id="spentResult">
                             $0
                         </strong>
+
                     </div>
 
+
                     <div class="result-box">
-                        <small>Осталось</small>
+
+                        <small>
+                            Қалғаны
+                        </small>
+
                         <strong id="leftResult">
                             $0
                         </strong>
+
                     </div>
 
+
                     <div class="result-box">
-                        <small>Комплектующих</small>
+
+                        <small>
+                            Құрамдас бөлшектер
+                        </small>
+
                         <strong>
                             8 / 8
                         </strong>
+
                     </div>
 
                 </div>
@@ -1303,20 +1370,22 @@ button {
 
                 <div class="score"
                      id="scoreText">
-                    Оценка: 100 / 100
+                    Баға: 100 / 100
                 </div>
 
 
                 <button class="power-btn"
                         onclick="powerOn()">
-                    ⚡ Запустить ПК
+                    ⚡ Компьютерді іске қосу
                 </button>
+
 
                 <br><br>
 
+
                 <button class="nav-btn"
                         onclick="restartGame()">
-                    🔄 Собрать заново
+                    🔄 Қайтадан құрастыру
                 </button>
 
             </div>
@@ -1338,13 +1407,14 @@ button {
     <div class="empty-page">
 
         <h2>
-            🔒 Вторая вкладка
+            🔒 2-бөлім
         </h2>
 
+
         <p>
-            Здесь позже можно добавить следующую часть проекта.
-            Например: тест знаний, 3D-сборку, сравнение комплектующих
-            или мини-игру.
+            Бұл жерде жобаның келесі бөлімін қосуға болады.
+            Мысалы: білімді тексеру тесті, 3D жинақтау,
+            құрамдас бөлшектерді салыстыру немесе шағын ойын.
         </p>
 
     </div>
@@ -1355,7 +1425,7 @@ button {
 <script>
 
 /* =========================================================
-   GAME DATA
+   ОЙЫН ДЕРЕКТЕРІ
 ========================================================= */
 
 const BUDGET = 4500;
@@ -1364,14 +1434,16 @@ const components = [
 
     {
         id: "motherboard",
-        title: "Материнская плата",
+
+        title: "Аналық плата",
+
         icon: "🧩",
 
         description:
-        "Главная плата компьютера. К ней подключаются процессор, оперативная память, видеокарта, накопители и другие устройства.",
+        "Аналық плата — компьютердің негізгі тақтасы. Оған процессор, жедел жад, бейне карта, жинақтауыштар және басқа құрылғылар қосылады.",
 
         why:
-        "Она соединяет все основные комплектующие между собой и позволяет им работать как единая система.",
+        "Ол компьютердің барлық негізгі құрамдас бөлшектерін бір-бірімен байланыстырып, олардың бір жүйе ретінде жұмыс істеуін қамтамасыз етеді.",
 
         options: [
 
@@ -1379,28 +1451,28 @@ const components = [
                 name: "ASRock B650M",
                 spec: "AM5 • DDR5 • mATX • 2× M.2",
                 price: 130,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "MSI B650 Gaming",
                 spec: "AM5 • DDR5 • ATX • Wi-Fi",
                 price: 190,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "Gigabyte B650 AORUS",
                 spec: "AM5 • DDR5 • ATX • 3× M.2",
                 price: 260,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "ASUS TUF B650",
                 spec: "AM5 • DDR5 • Wi-Fi • ATX",
                 price: 320,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
@@ -1419,14 +1491,14 @@ const components = [
 
             {
                 name: "ASUS ROG Crosshair",
-                spec: "AM5 • DDR5 • топовый VRM • Wi-Fi",
+                spec: "AM5 • DDR5 • қуатты VRM • Wi-Fi",
                 price: 580,
                 tier: "Ultra"
             },
 
             {
                 name: "MSI MEG X670E",
-                spec: "AM5 • DDR5 • расширенные возможности",
+                spec: "AM5 • DDR5 • кеңейтілген мүмкіндіктер",
                 price: 650,
                 tier: "Ultra"
             }
@@ -1437,69 +1509,71 @@ const components = [
 
     {
         id: "cpu",
+
         title: "Процессор",
+
         icon: "🧠",
 
         description:
-        "Процессор, или CPU, выполняет вычисления и обрабатывает команды программ.",
+        "Процессор немесе CPU есептеулерді орындайды және бағдарламалардың командаларын өңдейді.",
 
         why:
-        "Без процессора компьютер не сможет выполнять программы, игры и другие задачи.",
+        "Процессорсыз компьютер бағдарламаларды, ойындарды және басқа тапсырмаларды орындай алмайды.",
 
         options: [
 
             {
                 name: "Ryzen 5 7600",
-                spec: "6 ядер • 12 потоков • AM5",
+                spec: "6 ядро • 12 ағын • AM5",
                 price: 190,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "Ryzen 7 7700",
-                spec: "8 ядер • 16 потоков • AM5",
+                spec: "8 ядро • 16 ағын • AM5",
                 price: 280,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "Ryzen 7 7800X3D",
-                spec: "8 ядер • 16 потоков • 3D Cache",
+                spec: "8 ядро • 16 ағын • 3D Cache",
                 price: 390,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "Ryzen 9 7900X",
-                spec: "12 ядер • 24 потока • AM5",
+                spec: "12 ядро • 24 ағын • AM5",
                 price: 440,
                 tier: "Премиум"
             },
 
             {
                 name: "Ryzen 9 7950X",
-                spec: "16 ядер • 32 потока • AM5",
+                spec: "16 ядро • 32 ағын • AM5",
                 price: 560,
                 tier: "Премиум"
             },
 
             {
                 name: "Ryzen 9 7950X3D",
-                spec: "16 ядер • 32 потока • 3D Cache",
+                spec: "16 ядро • 32 ағын • 3D Cache",
                 price: 650,
                 tier: "Ultra"
             },
 
             {
                 name: "Ryzen 9 Creator",
-                spec: "16 ядер • 32 потока • усиленный режим",
+                spec: "16 ядро • 32 ағын • күшейтілген режим",
                 price: 760,
                 tier: "Ultra"
             },
 
             {
                 name: "Ryzen Extreme",
-                spec: "16 ядер • 32 потока • максимальный класс",
+                spec: "16 ядро • 32 ағын • ең жоғары деңгей",
                 price: 850,
                 tier: "Ultra"
             }
@@ -1510,48 +1584,50 @@ const components = [
 
     {
         id: "cooler",
-        title: "Охлаждение CPU",
+
+        title: "CPU салқындату жүйесі",
+
         icon: "❄️",
 
         description:
-        "Система охлаждения отводит тепло от процессора.",
+        "Салқындату жүйесі процессордан жылуды шығарып, оның температурасын төмен деңгейде ұстайды.",
 
         why:
-        "Во время работы CPU сильно нагревается. Охлаждение помогает поддерживать нормальную температуру.",
+        "Жұмыс кезінде процессор қатты қызады. Салқындату жүйесі оның қалыпты температурада жұмыс істеуіне көмектеседі.",
 
         options: [
 
             {
                 name: "DeepCool AG400",
-                spec: "Башенный кулер • 120 мм",
+                spec: "Мұнаралық кулер • 120 мм",
                 price: 35,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "DeepCool AK400",
-                spec: "4 тепловые трубки • 120 мм",
+                spec: "4 жылу түтігі • 120 мм",
                 price: 50,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "Thermalright Peerless",
-                spec: "Dual Tower • 2 вентилятора",
+                spec: "Dual Tower • 2 желдеткіш",
                 price: 75,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "DeepCool AK620",
-                spec: "Dual Tower • 6 тепловых трубок",
+                spec: "Dual Tower • 6 жылу түтігі",
                 price: 90,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "Arctic Liquid Freezer",
-                spec: "240 мм • жидкостное охлаждение",
+                spec: "240 мм • сұйықтықпен салқындату",
                 price: 125,
                 tier: "Премиум"
             },
@@ -1572,7 +1648,7 @@ const components = [
 
             {
                 name: "ROG Ryujin",
-                spec: "360 мм • премиальная СЖО",
+                spec: "360 мм • премиум сұйықтықпен салқындату",
                 price: 270,
                 tier: "Ultra"
             }
@@ -1583,14 +1659,16 @@ const components = [
 
     {
         id: "ram",
-        title: "Оперативная память",
+
+        title: "Жедел жад",
+
         icon: "⚡",
 
         description:
-        "Оперативная память, или RAM, временно хранит данные, которые прямо сейчас используются компьютером.",
+        "Жедел жад немесе RAM компьютер дәл қазір пайдаланып жатқан деректерді уақытша сақтайды.",
 
         why:
-        "Чем больше подходящей оперативной памяти, тем комфортнее компьютер работает с несколькими программами и большими задачами.",
+        "Жедел жад көлемі жеткілікті болған сайын компьютер бірнеше бағдарламамен және үлкен тапсырмалармен ыңғайлырақ жұмыс істейді.",
 
         options: [
 
@@ -1598,28 +1676,28 @@ const components = [
                 name: "16 GB DDR5",
                 spec: "2×8 GB • 5200 MHz",
                 price: 55,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "32 GB DDR5",
                 spec: "2×16 GB • 5600 MHz",
                 price: 85,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "32 GB DDR5 Gaming",
                 spec: "2×16 GB • 6000 MHz • RGB",
                 price: 110,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "64 GB DDR5",
                 spec: "2×32 GB • 6000 MHz",
                 price: 170,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
@@ -1645,7 +1723,7 @@ const components = [
 
             {
                 name: "128 GB DDR5 Pro",
-                spec: "4×32 GB • усиленный профиль",
+                spec: "4×32 GB • күшейтілген профиль",
                 price: 440,
                 tier: "Ultra"
             }
@@ -1656,14 +1734,16 @@ const components = [
 
     {
         id: "gpu",
-        title: "Видеокарта",
+
+        title: "Бейне карта",
+
         icon: "🎮",
 
         description:
-        "GPU отвечает за обработку графики и создание изображения, которое отображается на мониторе.",
+        "GPU графиканы өңдеуге және мониторда көрсетілетін кескінді жасауға жауап береді.",
 
         why:
-        "Особенно важна для игр, 3D-графики, монтажа видео и других графически сложных задач.",
+        "Бейне карта ойындар, 3D графика, бейне монтаж және графикасы күрделі басқа тапсырмалар үшін өте маңызды.",
 
         options: [
 
@@ -1671,28 +1751,28 @@ const components = [
                 name: "RTX 4060",
                 spec: "8 GB VRAM • Gaming",
                 price: 300,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "RTX 4060 Ti",
                 spec: "8 GB VRAM • Gaming",
                 price: 420,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "RTX 4070 Super",
                 spec: "12 GB VRAM • 1440p",
                 price: 600,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "RTX 4070 Ti Super",
                 spec: "16 GB VRAM • 1440p/4K",
                 price: 800,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
@@ -1729,62 +1809,64 @@ const components = [
 
     {
         id: "ssd",
-        title: "SSD накопитель",
+
+        title: "SSD жинақтауышы",
+
         icon: "💾",
 
         description:
-        "SSD используется для хранения операционной системы, программ, игр, фотографий и других файлов.",
+        "SSD операциялық жүйені, бағдарламаларды, ойындарды, фотосуреттерді және басқа файлдарды сақтау үшін қолданылады.",
 
         why:
-        "SSD намного быстрее классического HDD и помогает быстрее загружать систему и программы.",
+        "SSD классикалық HDD-ге қарағанда әлдеқайда жылдам және жүйе мен бағдарламалардың тезірек іске қосылуына көмектеседі.",
 
         options: [
 
             {
                 name: "500 GB NVMe",
-                spec: "PCIe 4.0 • до 5000 MB/s",
+                spec: "PCIe 4.0 • 5000 MB/s дейін",
                 price: 40,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "1 TB NVMe",
-                spec: "PCIe 4.0 • до 7000 MB/s",
+                spec: "PCIe 4.0 • 7000 MB/s дейін",
                 price: 65,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "2 TB NVMe",
-                spec: "PCIe 4.0 • до 7000 MB/s",
+                spec: "PCIe 4.0 • 7000 MB/s дейін",
                 price: 110,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "2 TB Gaming NVMe",
-                spec: "PCIe 4.0 • высокий ресурс",
+                spec: "PCIe 4.0 • жоғары ресурс",
                 price: 145,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "4 TB NVMe",
-                spec: "PCIe 4.0 • большой объём",
+                spec: "PCIe 4.0 • үлкен көлем",
                 price: 240,
                 tier: "Премиум"
             },
 
             {
                 name: "4 TB Gen5",
-                spec: "PCIe 5.0 • высокая скорость",
+                spec: "PCIe 5.0 • жоғары жылдамдық",
                 price: 330,
                 tier: "Премиум"
             },
 
             {
                 name: "8 TB NVMe",
-                spec: "PCIe 4.0 • огромный объём",
+                spec: "PCIe 4.0 • өте үлкен көлем",
                 price: 520,
                 tier: "Ultra"
             },
@@ -1802,14 +1884,16 @@ const components = [
 
     {
         id: "psu",
-        title: "Блок питания",
+
+        title: "Қуат көзі",
+
         icon: "🔌",
 
         description:
-        "Блок питания преобразует электричество из розетки и подаёт необходимое питание всем компонентам компьютера.",
+        "Қуат көзі розеткадағы электр энергиясын компьютердің барлық компоненттеріне қажетті кернеуге түрлендіріп береді.",
 
         why:
-        "Мощности блока питания должно хватать для всех компонентов системы.",
+        "Қуат көзінің қуаты компьютердің барлық құрамдас бөлшектерін тұрақты жұмыс істеуге жеткілікті болуы керек.",
 
         options: [
 
@@ -1817,28 +1901,28 @@ const components = [
                 name: "650W Bronze",
                 spec: "650 Вт • 80+ Bronze",
                 price: 65,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "750W Gold",
                 spec: "750 Вт • 80+ Gold",
                 price: 90,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "850W Gold",
                 spec: "850 Вт • Modular",
                 price: 125,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "1000W Gold",
                 spec: "1000 Вт • Modular",
                 price: 170,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
@@ -1875,43 +1959,45 @@ const components = [
 
     {
         id: "case",
+
         title: "Корпус",
+
         icon: "🖥️",
 
         description:
-        "Корпус содержит и защищает внутренние комплектующие компьютера.",
+        "Корпус компьютердің ішкі құрамдас бөлшектерін орналастырып, оларды сыртқы әсерлерден қорғайды.",
 
         why:
-        "Он также влияет на охлаждение, расположение деталей, количество вентиляторов и внешний вид ПК.",
+        "Корпус салқындатуға, бөлшектердің орналасуына, желдеткіштер санына және компьютердің сыртқы көрінісіне әсер етеді.",
 
         options: [
 
             {
                 name: "Basic ATX Case",
-                spec: "ATX • 2 вентилятора",
+                spec: "ATX • 2 желдеткіш",
                 price: 60,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "DeepCool CC560",
-                spec: "ATX • 4 вентилятора",
+                spec: "ATX • 4 желдеткіш",
                 price: 75,
-                tier: "Бюджет"
+                tier: "Бюджеттік"
             },
 
             {
                 name: "Montech Air 903",
-                spec: "ATX • Mesh • 4 вентилятора",
+                spec: "ATX • Mesh • 4 желдеткіш",
                 price: 100,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
                 name: "NZXT H5 Flow",
-                spec: "ATX • стекло • Mesh",
+                spec: "ATX • шыны • Mesh",
                 price: 120,
-                tier: "Средний"
+                tier: "Орта деңгей"
             },
 
             {
@@ -1923,21 +2009,21 @@ const components = [
 
             {
                 name: "Lian Li O11",
-                spec: "ATX • панорамное стекло",
+                spec: "ATX • панорамалық шыны",
                 price: 170,
                 tier: "Премиум"
             },
 
             {
                 name: "Hyte Y70",
-                spec: "ATX • панорамное стекло",
+                spec: "ATX • панорамалық шыны",
                 price: 230,
                 tier: "Ultra"
             },
 
             {
                 name: "Premium Showcase",
-                spec: "ATX • стекло • RGB • 10 вентиляторов",
+                spec: "ATX • шыны • RGB • 10 желдеткіш",
                 price: 300,
                 tier: "Ultra"
             }
@@ -1949,16 +2035,17 @@ const components = [
 
 
 /* =========================================================
-   VARIABLES
+   АЙНЫМАЛЫЛАР
 ========================================================= */
 
 let currentStep = 0;
 
-let selected = new Array(components.length).fill(null);
+let selected =
+    new Array(components.length).fill(null);
 
 
 /* =========================================================
-   GET TOTAL
+   ЖАЛПЫ СОМАНЫ АНЫҚТАУ
 ========================================================= */
 
 function getSpent() {
@@ -1970,11 +2057,12 @@ function getSpent() {
         return total + item.price;
 
     }, 0);
+
 }
 
 
 /* =========================================================
-   FORMAT MONEY
+   АҚША ФОРМАТЫ
 ========================================================= */
 
 function money(value) {
@@ -1985,7 +2073,7 @@ function money(value) {
 
 
 /* =========================================================
-   UPDATE BUDGET
+   БЮДЖЕТТІ ЖАҢАРТУ
 ========================================================= */
 
 function updateBudget() {
@@ -1999,48 +2087,60 @@ function updateBudget() {
         Math.max(0, (spent / BUDGET) * 100)
     );
 
+
     document.getElementById("budgetText").textContent =
         money(remaining);
 
+
     const budgetText =
         document.getElementById("budgetText");
+
 
     budgetText.classList.toggle(
         "good",
         remaining >= 0
     );
 
+
     budgetText.classList.toggle(
         "bad",
         remaining < 0
     );
 
+
     document.getElementById("budgetFill").style.width =
         percent + "%";
 
+
     updateSummary();
+
 }
 
 
 /* =========================================================
-   RENDER STEP
+   ҚАДАМДЫ КӨРСЕТУ
 ========================================================= */
 
 function renderStep() {
 
     const component = components[currentStep];
 
+
     document.getElementById("stepNumber").textContent =
-        `ШАГ ${currentStep + 1} / ${components.length}`;
+        `${currentStep + 1} / ${components.length} ҚАДАМ`;
+
 
     document.getElementById("stepTitle").textContent =
         component.title;
 
+
     document.getElementById("stepIcon").textContent =
         component.icon;
 
+
     document.getElementById("description").textContent =
         component.description;
+
 
     document.getElementById("whyText").textContent =
         component.why;
@@ -2049,13 +2149,16 @@ function renderStep() {
     const optionsBox =
         document.getElementById("options");
 
+
     optionsBox.innerHTML = "";
 
 
     const spent = getSpent();
 
+
     const currentSelected =
         selected[currentStep];
+
 
     const spentWithoutCurrent =
         currentSelected
@@ -2071,6 +2174,7 @@ function renderStep() {
 
         const card =
             document.createElement("div");
+
 
         card.className = "option";
 
@@ -2094,13 +2198,19 @@ function renderStep() {
 
         let tierClass = "";
 
-        if (option.tier === "Премиум") {
+
+        if (
+            option.tier === "Премиум"
+        ) {
 
             tierClass = "premium";
 
         }
 
-        if (option.tier === "Ultra") {
+
+        if (
+            option.tier === "Ultra"
+        ) {
 
             tierClass = "ultra";
 
@@ -2155,15 +2265,18 @@ function renderStep() {
     const nextButton =
         document.getElementById("nextBtn");
 
-    if (currentStep === components.length - 1) {
+
+    if (
+        currentStep === components.length - 1
+    ) {
 
         nextButton.textContent =
-            "Завершить сборку ✓";
+            "Жинақты аяқтау ✓";
 
     } else {
 
         nextButton.textContent =
-            "Выбрать и дальше →";
+            "Таңдау және жалғастыру →";
 
     }
 
@@ -2174,13 +2287,14 @@ function renderStep() {
 
 
 /* =========================================================
-   SELECT
+   БӨЛШЕКТІ ТАҢДАУ
 ========================================================= */
 
 function selectOption(index) {
 
     const component =
         components[currentStep];
+
 
     const option =
         component.options[index];
@@ -2189,8 +2303,10 @@ function selectOption(index) {
     const spent =
         getSpent();
 
+
     const old =
         selected[currentStep];
+
 
     const spentWithoutCurrent =
         old
@@ -2204,7 +2320,7 @@ function selectOption(index) {
     ) {
 
         alert(
-            "Эта деталь выходит за пределы бюджета."
+            "Бұл бөлшектің бағасы белгіленген бюджеттен асып кетеді."
         );
 
         return;
@@ -2226,7 +2342,7 @@ function selectOption(index) {
 
 
 /* =========================================================
-   INSTALL VISUAL
+   КӨРНЕКІ БӨЛШЕКТІ ОРНАТУ
 ========================================================= */
 
 function installVisual(id) {
@@ -2260,7 +2376,11 @@ function installVisual(id) {
 
     if (id === "ram") {
 
-        for (let i = 1; i <= 4; i++) {
+        for (
+            let i = 1;
+            i <= 4;
+            i++
+        ) {
 
             document
                 .getElementById("visual-ram" + i)
@@ -2301,13 +2421,14 @@ function installVisual(id) {
 
 
 /* =========================================================
-   SUMMARY
+   ЖИНАҚТЫ КӨРСЕТУ
 ========================================================= */
 
 function updateSummary() {
 
     const box =
         document.getElementById("summaryList");
+
 
     box.innerHTML = "";
 
@@ -2317,8 +2438,10 @@ function updateSummary() {
         const item =
             selected[index];
 
+
         const row =
             document.createElement("div");
+
 
         row.className =
             "summary-item";
@@ -2349,7 +2472,7 @@ function updateSummary() {
 
 
 /* =========================================================
-   NEXT
+   КЕЛЕСІ ҚАДАМ
 ========================================================= */
 
 function nextStep() {
@@ -2357,7 +2480,7 @@ function nextStep() {
     if (!selected[currentStep]) {
 
         alert(
-            "Сначала выберите комплектующее."
+            "Алдымен құрамдас бөлшекті таңдаңыз."
         );
 
         return;
@@ -2374,6 +2497,7 @@ function nextStep() {
 
         renderStep();
 
+
         window.scrollTo({
             top: 0,
             behavior: "smooth"
@@ -2389,7 +2513,7 @@ function nextStep() {
 
 
 /* =========================================================
-   PREVIOUS
+   АЛДЫҢҒЫ ҚАДАМ
 ========================================================= */
 
 function previousStep() {
@@ -2406,19 +2530,21 @@ function previousStep() {
 
 
 /* =========================================================
-   FINISH
+   ЖИНАҚТАУДЫ АЯҚТАУ
 ========================================================= */
 
 function finishGame() {
 
     const allSelected =
-        selected.every(item => item !== null);
+        selected.every(
+            item => item !== null
+        );
 
 
     if (!allSelected) {
 
         alert(
-            "Выберите все комплектующие."
+            "Барлық құрамдас бөлшектерді таңдаңыз."
         );
 
         return;
@@ -2428,6 +2554,7 @@ function finishGame() {
 
     const spent =
         getSpent();
+
 
     const remaining =
         BUDGET - spent;
@@ -2444,9 +2571,9 @@ function finishGame() {
 
 
     /*
-        Игровая оценка.
-        Чем рациональнее использован бюджет,
-        тем выше оценка.
+        Ойын бағасы.
+        Бюджет тиімді пайдаланылған сайын
+        нәтиже жоғары болады.
     */
 
     let score =
@@ -2464,7 +2591,7 @@ function finishGame() {
 
     document.getElementById("scoreText")
         .textContent =
-        `Игровая оценка: ${score} / 100`;
+        `Ойын бағасы: ${score} / 100`;
 
 
     document.getElementById("stepCard")
@@ -2484,7 +2611,7 @@ function finishGame() {
 
 
 /* =========================================================
-   POWER
+   КОМПЬЮТЕРДІ ІСКЕ ҚОСУ
 ========================================================= */
 
 function powerOn() {
@@ -2492,25 +2619,28 @@ function powerOn() {
     const pc =
         document.getElementById("pcCase");
 
+
     pc.classList.add("powered");
 
 
     const button =
         document.querySelector(".power-btn");
 
+
     button.textContent =
-        "🟢 ПК ЗАПУЩЕН";
+        "🟢 КОМПЬЮТЕР ІСКЕ ҚОСЫЛДЫ";
 
 }
 
 
 /* =========================================================
-   RESTART
+   ҚАЙТА БАСТАУ
 ========================================================= */
 
 function restartGame() {
 
     currentStep = 0;
+
 
     selected =
         new Array(components.length)
@@ -2541,7 +2671,7 @@ function restartGame() {
 
     document.querySelector(".power-btn")
         .textContent =
-        "⚡ Запустить ПК";
+        "⚡ Компьютерді іске қосу";
 
 
     renderStep();
@@ -2552,7 +2682,7 @@ function restartGame() {
 
 
 /* =========================================================
-   TABS
+   БӨЛІМДЕР
 ========================================================= */
 
 function openTab(page, button) {
@@ -2586,7 +2716,7 @@ function openTab(page, button) {
 
 
 /* =========================================================
-   START
+   БАСТАУ
 ========================================================= */
 
 renderStep();
@@ -2597,3 +2727,4 @@ updateBudget();
 
 </body>
 </html>
+```
